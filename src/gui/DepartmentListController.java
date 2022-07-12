@@ -92,6 +92,7 @@ public class DepartmentListController implements Initializable {
 			//injetar dependencia do formcontroller 
 			DepartmentFormController controller = loader.getController();
 			controller.setDepartment(obj);
+			controller.setDepartmentService(new DepartmentService());
 			controller.updateFormData();
 			
 			//instanciar um palco na frente do outro

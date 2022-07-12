@@ -13,5 +13,16 @@ public class DepartmentService {
 	public List<Department> findAll(){	
 		return dao.findAll();
 	}
+	
+	
+	public void saveOrUpdate(Department obj) {
+		if(obj.getId() == null) {
+			//não existe no cadastro
+			dao.insert(obj);
+		}
+		else {
+			dao.update(obj);
+		}
+	}
 
 }
